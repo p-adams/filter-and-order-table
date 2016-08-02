@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filter and Order Table</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app">
+        <input
+            class="form-control"
+            v-model.number="searchDetails"
+            placeholder="filter by name or age"
+         >
+        <table class="table table-striped">
+            <thead>
+                <th><a href="#" @click="getKey('name')">Name</th>
+                <th><a href="#" @click="getKey('age')">Age</th>
+            </thead>
+            <tbody>
+                <tr v-for="person in filterIt">
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-beta.6/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
